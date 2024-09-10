@@ -1,0 +1,10 @@
+le"pwd" //prints file path
+"cd" //change directory 
+"ls" //list all the file in directory
+"mkdir" //make directory 
+"type < filename.txt" //make new file
+"cat filename.txt" //read the file content
+"mv filename.txt directory name" //move the file from one dir to other
+"cp filename.txt directory name"
+"node" //gives the version
+"node filename.js" runs the file
