@@ -1,7 +1,6 @@
 // creating http server
 //express
 const express = require("express");
-
 const app = express();
 
 function sum(n){
