@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function changeFavicon(){
+            const response = await fetch("https://icon.horse/icon/"+ document.getElementById("url").value +"?apikey=none&fallback_text=000000&fallback_bg=ffffff&size=small&ignore_other_sizes=true&status_code_404=true");
+            const blob = await response.blob();
+            const imageUrl = URL.createObjectURL(blob);
+            document.getElementById("favicon").src = imageUrl;
+            document.getElementById("website-favicon").href = imageUrl;
+        }
+    </script>
+
+    <link rel="icon" type="image/x-icon" id="website-favicon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Website Favicon</h1>
+    <input type="text" id="url" placeholder="Enter URL">
+    <button onclick="changeFavicon()">Get Favicon</button>
+    <div class="favicon-container">
+        <img id="favicon">
+    </div>
+
+</body>
+</html>

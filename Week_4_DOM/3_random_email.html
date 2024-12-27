@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- API key kaam nahi kar rahi hai -->
+    <script> 
+        async function generateEmail(){
+            const url = 'https://random-text-generator.p.rapidapi.com/api/v1/phone';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': 'cf0de000e6mshfa060083cd7dd77p1556a1jsn29f8a58c397e',
+                    'x-rapidapi-host': 'random-text-generator.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.text();
+                document.getElementById("email").innerText = result;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="generateEmail()">Generate Email</button>
+    <h4>Generated Email</h4>
+    <p id="email"></p>
+</body>
+</html>
