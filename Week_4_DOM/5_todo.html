@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addTodo(){
+            let task = document.getElementById("task").value;
+            let time = document.getElementById("time").value;
+            let list = document.getElementById("list");
+            let li = document.createElement("li"); //creates a list item
+            let button = document.createElement("button"); //creates a button
+            button.textContent = "Delete";
+            button.onclick = function(){
+                // list.removeChild(li);
+                button.innerHTML = "Done";
+            }
+            li.textContent = `${task} => ${time}`;
+            li.appendChild(button);
+            list.appendChild(li);
+        } 
+    </script>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="task" placeholder="Add a new todo">
+    <br>
+    <br>
+    <input type="text" id="time" placeholder="Add a time">
+    <br>
+    <br>
+    <button id="add" onclick="addTodo()">Add Todo</button>
+    <br>
+    <br>
+    <ol id="list"></ol>
+</body>
+</html>
